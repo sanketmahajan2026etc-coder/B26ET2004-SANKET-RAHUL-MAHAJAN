@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+
+class Complex {
+private:
+    float real;
+    float imag;
+
+public:
+    // Default constructor
+    Complex() : real(0), imag(0) {}
+
+    // Parameterized constructor to initialize real and imaginary parts
+    Complex(float r, float i) : real(r), imag(i) {}
+
+    // Method to read data from the user
+    void input() {
+        cout << "Enter real and imaginary parts respectively: ";
+        cin >> real >> imag;
+    }
+
+    // Method to add two Complex numbers and return the result
+    Complex add(const Complex& other) {
+        Complex temp;
+        temp.real = this->real + other.real;
+        temp.imag = this->imag + other.imag;
+        return temp;
+    }
+
+    // Method to display the complex number in standard format (a + bi)
+    void display() const {
+        if (imag >= 0)
+            cout << real << " + " << imag << "i" << endl;
+        else
+            cout << real << " - " << -imag << "i" << endl; // Handles negative imaginary numbers nicely
+    }
+};
+
+int main() {
+    Complex num1, num2, sum;
+
+    cout << "For first complex number:" << endl;
+    num1.input();
+
+    cout << "\nFor second complex number:" << endl;
+    num2.input();
+
+    // Adding the two complex numbers
+    sum = num1.add(num2);
+
+    // Displaying the results
+    cout << "\nFirst Complex Number: ";
+    num1.display();
+    
+    cout << "Second Complex Number: ";
+    num2.display();
+    
+    cout << "Sum of the Complex Numbers: ";
+    sum.display();
+
+    return 0;
+}
