@@ -7,19 +7,18 @@ private:
     float imag;
 
 public:
-    // Default constructor
+   
     Complex() : real(0), imag(0) {}
 
-    // Parameterized constructor to initialize real and imaginary parts
     Complex(float r, float i) : real(r), imag(i) {}
 
-    // Method to read data from the user
+    // read data from the user
     void input() {
         cout << "Enter real and imaginary parts respectively: ";
         cin >> real >> imag;
     }
 
-    // Method to add two Complex numbers and return the result
+    // add two Complex numbers and return the result
     Complex add(const Complex& other) {
         Complex temp;
         temp.real = this->real + other.real;
@@ -27,7 +26,7 @@ public:
         return temp;
     }
 
-    // Method to display the complex number in standard format (a + bi)
+    // display the complex number in standard format (a + bi)
     void display() const {
         if (imag >= 0)
             cout << real << " + " << imag << "i" << endl;
