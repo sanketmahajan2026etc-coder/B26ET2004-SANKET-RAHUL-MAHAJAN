@@ -1,0 +1,46 @@
+
+#include <iostream>
+using namespace std;
+
+class Employee
+{
+public:
+    virtual void display()
+    {
+        cout << "Employee Details" << endl;
+    }
+};
+
+class Manager : public Employee
+{
+public:
+    void display()
+    {
+        cout << "Employee Type: Manager" << endl;
+    }
+};
+
+class Developer : public Employee
+{
+public:
+    void display()
+    {
+        cout << "Employee Type: Developer" << endl;
+    }
+};
+
+int main()
+{
+    Employee *e;
+
+    Manager m;
+    Developer d;
+
+    e = &m;
+    e->display();
+
+    e = &d;
+    e->display();
+
+    return 0;
+}
